@@ -23,9 +23,10 @@ body {
     color: var(--text);
 }
 
-/* 🔥 ARREGLO IMPORTANTE PARA QUE NO SE CORTEN LAS SECCIONES */
+/* 🔥 ARREGLO GLOBAL PARA TODAS LAS SECCIONES */
 section {
-    scroll-margin-top: 120px;
+    scroll-margin-top: 140px; /* evita que el menú tape el título */
+    margin-bottom: 180px;     /* evita que una sección asome debajo de otra */
 }
 
 /* NAV */
@@ -88,7 +89,6 @@ nav a:hover {
 .section-title {
     text-align: center;
     font-size: 2rem;
-    margin-top: 120px;
     margin-bottom: 10px;
 }
 
@@ -103,7 +103,7 @@ nav a:hover {
 /* GALLERY */
 .gallery {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: auto;
     padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -125,7 +125,7 @@ nav a:hover {
 /* ABOUT */
 .about {
     max-width: 900px;
-    margin: 120px auto;
+    margin: auto;
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -148,7 +148,7 @@ nav a:hover {
 /* PRICING */
 .pricing {
     max-width: 1200px;
-    margin: 120px auto;
+    margin: auto;
     padding: 0 20px;
 }
 
@@ -210,7 +210,7 @@ nav a:hover {
 /* CONTACT */
 .contact {
     max-width: 900px;
-    margin: 120px auto;
+    margin: auto;
     padding: 0 20px;
 }
 
@@ -247,7 +247,6 @@ footer {
     padding: 60px 20px;
     color: var(--text-soft);
     border-top: 1px solid var(--border);
-    margin-top: 80px;
 }
 
 /* LIGHTBOX */
