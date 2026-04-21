@@ -55,7 +55,12 @@ button.send:hover{opacity:.8}
 
 footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:80px}
 
-/* NUEVA SECCIÓN EMPRESAS */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:20}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90%;max-height:85%;border-radius:8px}
+.lightbox-close{position:absolute;top:30px;right:40px;font-size:2rem;cursor:pointer;color:white}
+
+/* ===== NUEVA SECCIÓN: EMPRESAS ===== */
 .clients{
   max-width:1200px;
   margin:80px auto;
@@ -74,7 +79,6 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
   border:1px solid var(--border);
   padding:20px;
   border-radius:12px;
-  width:100%;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -98,11 +102,6 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
   filter:grayscale(0%);
   opacity:1;
 }
-
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:20}
-.lightbox.open{display:flex}
-.lightbox img{max-width:90%;max-height:85%;border-radius:8px}
-.lightbox-close{position:absolute;top:30px;right:40px;font-size:2rem;cursor:pointer;color:white}
 </style>
 </head>
 
@@ -123,11 +122,11 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 
 <section class="hero" id="inicio">
   <h1>Portfolio Inmobiliario</h1>
-  <p>Fotografía profesional de pisos, casas y locales comerciales.</p>
+  <p>Fotografía profesional de pisos, casas y locales comerciales. Minimalismo, luz natural y composición impecable.</p>
 </section>
 
 <h2 class="section-title" id="galeria">Galería</h2>
-<p class="section-subtitle">Espacios capturados con estética moderna.</p>
+<p class="section-subtitle">Espacios capturados con precisión, claridad y estética moderna.</p>
 
 <section class="gallery">
   <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200">
@@ -137,35 +136,33 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 </section>
 
 <h2 class="section-title" id="tarifas">Tarifas</h2>
-<p class="section-subtitle">Servicios fotográficos profesionales.</p>
+<p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias.</p>
 
 <section class="pricing">
   <div class="pricing-grid">
-
     <div class="price-card">
       <h3>Piso Básico</h3>
       <p class="price">80€</p>
       <ul><li>10 fotos editadas</li><li>Entrega 24h</li></ul>
       <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
     </div>
-
   </div>
 </section>
 
 <h2 class="section-title" id="sobre">Sobre mí</h2>
-<p class="section-subtitle">Fotógrafo especializado en interiores.</p>
+<p class="section-subtitle">Fotógrafo especializado en espacios interiores y arquitectura.</p>
 
 <section class="about">
   <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200">
   <div>
-    <p>Fotografía inmobiliaria con enfoque minimalista y profesional.</p>
-    <p style="margin-top:16px">Busco mostrar cada espacio con claridad y estética.</p>
+    <p>Soy un fotógrafo especializado en capturar espacios inmobiliarios con un enfoque minimalista y profesional.</p>
+    <p style="margin-top:16px">Mi objetivo es mostrar cada propiedad con claridad y estética.</p>
   </div>
 </section>
 
-<!-- 👇 NUEVA SECCIÓN EMPRESAS -->
-<h2 class="section-title" id="empresas">Empresas</h2>
-<p class="section-subtitle">Marcas y clientes con los que he trabajado.</p>
+<!-- ===== NUEVA SECCIÓN (EMPRESAS) ===== -->
+<h2 class="section-title" id="empresas">Empresas con las que he trabajado</h2>
+<p class="section-subtitle">Marcas y clientes que han confiado en mi trabajo.</p>
 
 <section class="clients">
   <div class="clients-grid">
@@ -190,18 +187,18 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 </section>
 
 <h2 class="section-title" id="contacto">Contacto</h2>
-<p class="section-subtitle">Reserva tu sesión.</p>
+<p class="section-subtitle">Reserva tu sesión o solicita información.</p>
 
 <section class="contact">
   <form>
     <input type="text" placeholder="Tu nombre">
     <input type="email" placeholder="Correo electrónico">
-    <textarea placeholder="Mensaje"></textarea>
+    <textarea placeholder="Cuéntame qué tipo de propiedad necesitas fotografiar"></textarea>
     <button class="send">Enviar mensaje</button>
   </form>
 </section>
 
-<footer>© 2026 Fotografía Inmobiliaria</footer>
+<footer>© 2026 Fotografía Inmobiliaria · Todos los derechos reservados</footer>
 
 </body>
 </html>
