@@ -5,18 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio producto · Fotografía Profesional</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-:root{
-  --bg:#ffffff;
-  --text:#111;
-  --text-soft:#555;
-  --accent:#000;
-  --border:#e5e5e5;
-}
-
+:root{--bg:#ffffff;--text:#111;--text-soft:#555;--accent:#000;--border:#e5e5e5}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
@@ -50,66 +41,62 @@ section[id],h2[id]{scroll-margin-top:72px}
 .price-card:hover{transform:translateY(-6px)}
 .price-card h3{font-size:1.3rem;margin-bottom:10px}
 .price{font-size:2rem;margin-bottom:20px}
-.price-card ul{list-style:none}
+.price-card ul{list-style:none;padding:0;margin:0 0 25px}
 .price-card ul li{margin:8px 0;color:var(--text-soft)}
-.price-card button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
+.price-card button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;transition:.25s}
 .price-card button:hover{opacity:.8}
 
 .contact{max-width:900px;margin:120px auto;padding:0 20px}
 .contact form{display:grid;gap:20px}
-input,textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:8px;
-  font-size:1rem;
-  font-family:inherit;
-}
-
-button.send{
-  background:var(--accent);
-  color:white;
-  border:none;
-  padding:12px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-}
+input,textarea,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;outline:none;transition:.2s}
+input:focus,textarea:focus,select:focus{border-color:#999}
+button.send{background:var(--accent);color:white;border:none;padding:12px;border-radius:8px;font-weight:600;cursor:pointer}
+button.send:hover{opacity:.8}
 
 footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:80px}
 
-/* EXPERIENCIA */
-.experience{
+/* NUEVA SECCIÓN EMPRESAS */
+.clients{
   max-width:1200px;
   margin:80px auto;
   padding:0 20px;
 }
 
-.experience-grid{
+.clients-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:30px;
+  align-items:center;
+  justify-items:center;
 }
 
-.exp-card{
+.client{
   border:1px solid var(--border);
-  padding:25px;
+  padding:20px;
   border-radius:12px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   transition:.3s;
 }
 
-.exp-card:hover{
+.client:hover{
   transform:translateY(-5px);
 }
 
-.exp-card h3{
-  font-size:1.2rem;
-  margin-bottom:10px;
+.client img{
+  width:80px;
+  height:80px;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:0.8;
+  transition:.3s;
 }
 
-.exp-card p{
-  color:var(--text-soft);
-  margin-bottom:8px;
+.client:hover img{
+  filter:grayscale(0%);
+  opacity:1;
 }
 
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:20}
@@ -129,7 +116,6 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
       <a href="#galeria">Galería</a>
       <a href="#tarifas">Tarifas</a>
       <a href="#sobre">Sobre mí</a>
-      <a href="#experiencia">Experiencia</a>
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
@@ -163,13 +149,6 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
       <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
     </div>
 
-    <div class="price-card">
-      <h3>Vivienda Premium</h3>
-      <p class="price">150€</p>
-      <ul><li>20 fotos</li><li>Edición avanzada</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
-    </div>
-
   </div>
 </section>
 
@@ -184,32 +163,27 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
   </div>
 </section>
 
-<!-- 👇 EXPERIENCIA AÑADIDA -->
-<h2 class="section-title" id="experiencia">Experiencia</h2>
-<p class="section-subtitle">Empresas con las que he trabajado.</p>
+<!-- 👇 NUEVA SECCIÓN EMPRESAS -->
+<h2 class="section-title" id="empresas">Empresas</h2>
+<p class="section-subtitle">Marcas y clientes con los que he trabajado.</p>
 
-<section class="experience">
-  <div class="experience-grid">
+<section class="clients">
+  <div class="clients-grid">
 
-    <div class="exp-card">
-      <h3>Inmobiliaria NovaCasa</h3>
-      <p><strong>Rol:</strong> Fotógrafo inmobiliario</p>
-      <p><strong>Periodo:</strong> 2024 - Actualidad</p>
-      <p>Fotografía de viviendas para venta y alquiler.</p>
+    <div class="client">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Real_Estate_icon.png" alt="Empresa 1">
     </div>
 
-    <div class="exp-card">
-      <h3>Estudio Visual Pro</h3>
-      <p><strong>Rol:</strong> Asistente de fotografía</p>
-      <p><strong>Periodo:</strong> 2023 - 2024</p>
-      <p>Apoyo en sesiones y edición de interiores.</p>
+    <div class="client">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Camera_icon.svg" alt="Empresa 2">
     </div>
 
-    <div class="exp-card">
-      <h3>Freelance</h3>
-      <p><strong>Rol:</strong> Fotógrafo independiente</p>
-      <p><strong>Periodo:</strong> 2022 - Actualidad</p>
-      <p>Proyectos para particulares y empresas.</p>
+    <div class="client">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Freelancer_icon.svg" alt="Empresa 3">
+    </div>
+
+    <div class="client">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Empresa 4">
     </div>
 
   </div>
@@ -223,7 +197,7 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
     <input type="text" placeholder="Tu nombre">
     <input type="email" placeholder="Correo electrónico">
     <textarea placeholder="Mensaje"></textarea>
-    <button class="send">Enviar</button>
+    <button class="send">Enviar mensaje</button>
   </form>
 </section>
 
