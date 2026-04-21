@@ -1,260 +1,53 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotografía Inmobiliaria · Profesional</title>
+<section class="pricing" id="tarifas">
+    <h2 class="section-title">Tarifas</h2>
+    <p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias, particulares y empresas.</p>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <div class="pricing-grid">
 
-<style>
-:root {
-    --bg: #ffffff;
-    --text: #111;
-    --soft: #666;
-    --accent: #000;
-    --border: #eaeaea;
-}
+        <div class="price-card">
+            <h3>Piso Básico</h3>
+            <p class="price">80€</p>
+            <ul>
+                <li>10 fotografías editadas en alta calidad</li>
+                <li>Corrección de luz, color y encuadre</li>
+                <li>Entrega rápida en 24 horas</li>
+                <li>Duración de sesión: 30-45 min</li>
+                <li>Optimización para portales inmobiliarios</li>
+                <li>Uso web y redes sociales incluido</li>
+                <li>Ideal para alquiler y propiedades pequeñas</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
 
-html {
-    scroll-behavior: smooth;
-}
+        <div class="price-card">
+            <h3>Vivienda Premium</h3>
+            <p class="price">150€</p>
+            <ul>
+                <li>20 fotografías profesionales</li>
+                <li>Edición avanzada (HDR y balance de blancos)</li>
+                <li>Corrección de perspectiva (verticales rectas)</li>
+                <li>Duración de sesión: 1 hora</li>
+                <li>Fotografías de detalle incluidas</li>
+                <li>Entrega en 24-48 horas</li>
+                <li>Ideal para venta de viviendas</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-}
+        <div class="price-card">
+            <h3>Local Comercial</h3>
+            <p class="price">200€</p>
+            <ul>
+                <li>25 fotografías de alta calidad</li>
+                <li>Interior + exterior del local</li>
+                <li>Tomas de detalle profesional</li>
+                <li>Edición avanzada y retoque completo</li>
+                <li>Duración de sesión: 1h - 1h 30min</li>
+                <li>Entrega en 48 horas</li>
+                <li>Uso comercial completo (web, publicidad)</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
 
-/* HEADER */
-header {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    z-index: 100;
-}
-
-nav {
-    max-width: 1200px;
-    margin: auto;
-    padding: 18px 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: var(--soft);
-}
-
-nav a:hover {
-    color: var(--text);
-}
-
-/* FIX SCROLL */
-section {
-    scroll-margin-top: 100px;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 140px 20px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-}
-
-/* TITLES */
-.title {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 120px;
-}
-
-.subtitle {
-    text-align: center;
-    color: var(--soft);
-    margin-bottom: 60px;
-}
-
-/* GALLERY */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* PRICING */
-.pricing {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 30px;
-}
-
-.card {
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 15px;
-    transition: .3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.price {
-    font-size: 2rem;
-    margin: 15px 0;
-}
-
-.features {
-    text-align: left;
-    margin: 20px 0;
-}
-
-.features li {
-    margin-bottom: 8px;
-    color: var(--soft);
-}
-
-button {
-    background: black;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    width: 100%;
-}
-
-/* ANIMACIONES */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: .8s;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<nav>
-<div>Fotografía</div>
-<div>
-<a href="#inicio">Inicio</a>
-<a href="#galeria">Galería</a>
-<a href="#tarifas">Tarifas</a>
-</div>
-</nav>
-</header>
-
-<section id="inicio" class="hero">
-<h1>Fotografía Inmobiliaria</h1>
-<p>Imágenes que venden propiedades</p>
+    </div>
 </section>
-
-<section id="galeria">
-<h2 class="title">Galería</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200">
-</div>
-</section>
-
-<section id="tarifas" class="pricing">
-<h2 class="title">Tarifas</h2>
-
-<div class="cards">
-
-<div class="card hidden">
-<h3>Piso Básico</h3>
-<p class="price">80€</p>
-
-<ul class="features">
-<li>✔ 10 fotografías editadas</li>
-<li>✔ Corrección de luz y color</li>
-<li>✔ Entrega en 24 horas</li>
-<li>✔ Duración de sesión: 30 min</li>
-<li>✔ Ideal para alquiler</li>
-<li>✔ Uso web e inmobiliarias</li>
-</ul>
-
-<button onclick="reservar('Piso Básico')">Reservar</button>
-</div>
-
-<div class="card hidden">
-<h3>Vivienda Premium</h3>
-<p class="price">150€</p>
-
-<ul class="features">
-<li>✔ 20 fotografías profesionales</li>
-<li>✔ Edición avanzada HDR</li>
-<li>✔ Corrección de perspectiva</li>
-<li>✔ Duración de sesión: 1h</li>
-<li>✔ Ideal para venta</li>
-<li>✔ Incluye detalles y extras</li>
-</ul>
-
-<button onclick="reservar('Premium')">Reservar</button>
-</div>
-
-<div class="card hidden">
-<h3>Local Comercial</h3>
-<p class="price">200€</p>
-
-<ul class="features">
-<li>✔ 25 fotografías de alta calidad</li>
-<li>✔ Fotografía de interiores y exterior</li>
-<li>✔ Tomas de detalle profesional</li>
-<li>✔ Duración: 1h - 1h 30min</li>
-<li>✔ Entrega en 48h</li>
-<li>✔ Uso comercial completo</li>
-</ul>
-
-<button onclick="reservar('Local Comercial')">Reservar</button>
-</div>
-
-</div>
-</section>
-
-<script>
-const elements = document.querySelectorAll('.hidden');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-elements.forEach(el => observer.observe(el));
-
-function reservar(tipo){
-    let mensaje = encodeURIComponent("Hola, quiero reservar el servicio: " + tipo);
-    window.open("https://wa.me/34600000000?text=" + mensaje);
-}
-</script>
-
-</body>
-</html>
