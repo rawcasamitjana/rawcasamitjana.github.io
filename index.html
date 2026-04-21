@@ -5,9 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio producto · Fotografía Profesional</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-:root{--bg:#ffffff;--text:#111;--text-soft:#555;--accent:#000;--border:#e5e5e5}
+
+:root{
+  --bg:#ffffff;
+  --text:#111;
+  --text-soft:#555;
+  --accent:#000;
+  --border:#e5e5e5;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
@@ -18,7 +27,6 @@ nav{max-width:1200px;margin:auto;padding:18px 30px;display:flex;justify-content:
 nav a{margin-left:26px;text-decoration:none;color:var(--text-soft);font-size:.95rem;transition:.25s}
 nav a:hover{color:var(--accent)}
 
-/* FIX SOLAPAMIENTO — esto es lo que faltaba */
 section[id],h2[id]{scroll-margin-top:72px}
 
 .hero{text-align:center;padding:120px 20px 80px}
@@ -42,19 +50,67 @@ section[id],h2[id]{scroll-margin-top:72px}
 .price-card:hover{transform:translateY(-6px)}
 .price-card h3{font-size:1.3rem;margin-bottom:10px}
 .price{font-size:2rem;margin-bottom:20px}
-.price-card ul{list-style:none;padding:0;margin:0 0 25px}
+.price-card ul{list-style:none}
 .price-card ul li{margin:8px 0;color:var(--text-soft)}
-.price-card button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;transition:.25s}
+.price-card button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer}
 .price-card button:hover{opacity:.8}
 
 .contact{max-width:900px;margin:120px auto;padding:0 20px}
 .contact form{display:grid;gap:20px}
-input,textarea,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;outline:none;transition:.2s}
-input:focus,textarea:focus,select:focus{border-color:#999}
-button.send{background:var(--accent);color:white;border:none;padding:12px;border-radius:8px;font-weight:600;cursor:pointer}
-button.send:hover{opacity:.8}
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:1rem;
+  font-family:inherit;
+}
+
+button.send{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
 
 footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:80px}
+
+/* EXPERIENCIA */
+.experience{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.exp-card{
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.exp-card:hover{
+  transform:translateY(-5px);
+}
+
+.exp-card h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+
+.exp-card p{
+  color:var(--text-soft);
+  margin-bottom:8px;
+}
 
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:20}
 .lightbox.open{display:flex}
@@ -62,6 +118,7 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 .lightbox-close{position:absolute;top:30px;right:40px;font-size:2rem;cursor:pointer;color:white}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -72,6 +129,7 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
       <a href="#galeria">Galería</a>
       <a href="#tarifas">Tarifas</a>
       <a href="#sobre">Sobre mí</a>
+      <a href="#experiencia">Experiencia</a>
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
@@ -79,81 +137,97 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 
 <section class="hero" id="inicio">
   <h1>Portfolio Inmobiliario</h1>
-  <p>Fotografía profesional de pisos, casas y locales comerciales. Minimalismo, luz natural y composición impecable.</p>
+  <p>Fotografía profesional de pisos, casas y locales comerciales.</p>
 </section>
 
 <h2 class="section-title" id="galeria">Galería</h2>
-<p class="section-subtitle">Espacios capturados con precisión, claridad y estética moderna.</p>
+<p class="section-subtitle">Espacios capturados con estética moderna.</p>
+
 <section class="gallery">
-  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200" alt="">
+  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200">
+  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200">
+  <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200">
+  <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200">
 </section>
 
 <h2 class="section-title" id="tarifas">Tarifas</h2>
-<p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias, particulares y empresas.</p>
+<p class="section-subtitle">Servicios fotográficos profesionales.</p>
+
 <section class="pricing">
   <div class="pricing-grid">
+
     <div class="price-card">
       <h3>Piso Básico</h3>
       <p class="price">80€</p>
-      <ul><li>10 fotos editadas</li><li>Entrega en 24h</li><li>Ideal para alquiler</li></ul>
+      <ul><li>10 fotos editadas</li><li>Entrega 24h</li></ul>
       <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
     </div>
+
     <div class="price-card">
       <h3>Vivienda Premium</h3>
       <p class="price">150€</p>
-      <ul><li>20 fotos editadas</li><li>Edición avanzada</li><li>Ideal para venta</li></ul>
+      <ul><li>20 fotos</li><li>Edición avanzada</li></ul>
       <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
     </div>
-    <div class="price-card">
-      <h3>Local Comercial</h3>
-      <p class="price">200€</p>
-      <ul><li>25 fotos editadas</li><li>Fotografía de detalles</li><li>Entrega en 48h</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
-    </div>
+
   </div>
 </section>
 
 <h2 class="section-title" id="sobre">Sobre mí</h2>
-<p class="section-subtitle">Fotógrafo especializado en espacios interiores y arquitectura.</p>
+<p class="section-subtitle">Fotógrafo especializado en interiores.</p>
+
 <section class="about">
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200" alt="">
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200">
   <div>
-    <p>Soy un fotógrafo especializado en capturar espacios inmobiliarios con un enfoque minimalista y profesional.</p>
-    <p style="margin-top:16px">Mi objetivo es mostrar cada propiedad con claridad, amplitud y estética, resaltando su potencial real.</p>
+    <p>Fotografía inmobiliaria con enfoque minimalista y profesional.</p>
+    <p style="margin-top:16px">Busco mostrar cada espacio con claridad y estética.</p>
+  </div>
+</section>
+
+<!-- 👇 EXPERIENCIA AÑADIDA -->
+<h2 class="section-title" id="experiencia">Experiencia</h2>
+<p class="section-subtitle">Empresas con las que he trabajado.</p>
+
+<section class="experience">
+  <div class="experience-grid">
+
+    <div class="exp-card">
+      <h3>Inmobiliaria NovaCasa</h3>
+      <p><strong>Rol:</strong> Fotógrafo inmobiliario</p>
+      <p><strong>Periodo:</strong> 2024 - Actualidad</p>
+      <p>Fotografía de viviendas para venta y alquiler.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>Estudio Visual Pro</h3>
+      <p><strong>Rol:</strong> Asistente de fotografía</p>
+      <p><strong>Periodo:</strong> 2023 - 2024</p>
+      <p>Apoyo en sesiones y edición de interiores.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>Freelance</h3>
+      <p><strong>Rol:</strong> Fotógrafo independiente</p>
+      <p><strong>Periodo:</strong> 2022 - Actualidad</p>
+      <p>Proyectos para particulares y empresas.</p>
+    </div>
+
   </div>
 </section>
 
 <h2 class="section-title" id="contacto">Contacto</h2>
-<p class="section-subtitle">Reserva tu sesión o solicita información.</p>
+<p class="section-subtitle">Reserva tu sesión.</p>
+
 <section class="contact">
   <form>
     <input type="text" placeholder="Tu nombre">
     <input type="email" placeholder="Correo electrónico">
-    <textarea placeholder="Cuéntame qué tipo de propiedad necesitas fotografiar"></textarea>
-    <button class="send">Enviar mensaje</button>
+    <textarea placeholder="Mensaje"></textarea>
+    <button class="send">Enviar</button>
   </form>
 </section>
 
-<footer>© 2026 Fotografía Inmobiliaria · Todos los derechos reservados</footer>
+<footer>© 2026 Fotografía Inmobiliaria</footer>
 
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="closeBtn">×</span>
-  <img id="lightboxImg">
-</div>
-
-<script>
-const imgs = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const closeBtn = document.getElementById('closeBtn');
-imgs.forEach(img=>{img.addEventListener('click',()=>{lightboxImg.src=img.src;lightbox.classList.add('open')})});
-closeBtn.addEventListener('click',()=>lightbox.classList.remove('open'));
-lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open')});
-</script>
 </body>
 </html>
