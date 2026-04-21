@@ -1,159 +1,260 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Inmobiliario · Fotografía Profesional</title>
+<title>Fotografía Inmobiliaria · Profesional</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-:root{--bg:#ffffff;--text:#111;--text-soft:#555;--accent:#000;--border:#e5e5e5}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --soft: #666;
+    --accent: #000;
+    --border: #eaeaea;
+}
 
-header{position:sticky;top:0;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:10}
-nav{max-width:1200px;margin:auto;padding:18px 30px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.2rem;font-weight:600;letter-spacing:-.5px}
-nav a{margin-left:26px;text-decoration:none;color:var(--text-soft);font-size:.95rem;transition:.25s}
-nav a:hover{color:var(--accent)}
+html {
+    scroll-behavior: smooth;
+}
 
-/* FIX SOLAPAMIENTO — esto es lo que faltaba */
-section[id],h2[id]{scroll-margin-top:72px}
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
 
-.hero{text-align:center;padding:120px 20px 80px}
-.hero h1{font-size:2.8rem;font-weight:600;margin-bottom:12px}
-.hero p{color:var(--text-soft);max-width:600px;margin:auto;font-size:1.1rem}
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+}
 
-.section-title{text-align:center;font-size:2rem;margin-top:120px;margin-bottom:10px}
-.section-subtitle{text-align:center;color:var(--text-soft);max-width:600px;margin:auto;margin-bottom:50px}
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+}
 
-.gallery{max-width:1200px;margin:80px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px}
-.gallery img{width:100%;border-radius:8px;object-fit:cover;cursor:pointer;transition:.3s}
-.gallery img:hover{transform:scale(1.02)}
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--soft);
+}
 
-.about{max-width:900px;margin:120px auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.about img{width:100%;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
-.about p{color:var(--text-soft);line-height:1.7}
+nav a:hover {
+    color: var(--text);
+}
 
-.pricing{max-width:1200px;margin:120px auto;padding:0 20px}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px}
-.price-card{border:1px solid var(--border);padding:30px 20px;border-radius:12px;text-align:center;transition:.3s}
-.price-card:hover{transform:translateY(-6px)}
-.price-card h3{font-size:1.3rem;margin-bottom:10px}
-.price{font-size:2rem;margin-bottom:20px}
-.price-card ul{list-style:none;padding:0;margin:0 0 25px}
-.price-card ul li{margin:8px 0;color:var(--text-soft)}
-.price-card button{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;transition:.25s}
-.price-card button:hover{opacity:.8}
+/* FIX SCROLL */
+section {
+    scroll-margin-top: 100px;
+}
 
-.contact{max-width:900px;margin:120px auto;padding:0 20px}
-.contact form{display:grid;gap:20px}
-input,textarea,select{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;outline:none;transition:.2s}
-input:focus,textarea:focus,select:focus{border-color:#999}
-button.send{background:var(--accent);color:white;border:none;padding:12px;border-radius:8px;font-weight:600;cursor:pointer}
-button.send:hover{opacity:.8}
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 140px 20px;
+}
 
-footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px solid var(--border);margin-top:80px}
+.hero h1 {
+    font-size: 3rem;
+}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:20}
-.lightbox.open{display:flex}
-.lightbox img{max-width:90%;max-height:85%;border-radius:8px}
-.lightbox-close{position:absolute;top:30px;right:40px;font-size:2rem;cursor:pointer;color:white}
+/* TITLES */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 120px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--soft);
+    margin-bottom: 60px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* PRICING */
+.pricing {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.price {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.features {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.features li {
+    margin-bottom: 8px;
+    color: var(--soft);
+}
+
+button {
+    background: black;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* ANIMACIONES */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <div class="logo">Fotografía Inmobiliaria</div>
-    <div>
-      <a href="#inicio">Inicio</a>
-      <a href="#galeria">Galería</a>
-      <a href="#tarifas">Tarifas</a>
-      <a href="#sobre">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+<nav>
+<div>Fotografía</div>
+<div>
+<a href="#inicio">Inicio</a>
+<a href="#galeria">Galería</a>
+<a href="#tarifas">Tarifas</a>
+</div>
+</nav>
 </header>
 
-<section class="hero" id="inicio">
-  <h1>Portfolio Inmobiliario</h1>
-  <p>Fotografía profesional de pisos, casas y locales comerciales. Minimalismo, luz natural y composición impecable.</p>
+<section id="inicio" class="hero">
+<h1>Fotografía Inmobiliaria</h1>
+<p>Imágenes que venden propiedades</p>
 </section>
 
-<h2 class="section-title" id="galeria">Galería</h2>
-<p class="section-subtitle">Espacios capturados con precisión, claridad y estética moderna.</p>
-<section class="gallery">
-  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200" alt="">
-  <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200" alt="">
+<section id="galeria">
+<h2 class="title">Galería</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200">
+</div>
 </section>
 
-<h2 class="section-title" id="tarifas">Tarifas</h2>
-<p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias, particulares y empresas.</p>
-<section class="pricing">
-  <div class="pricing-grid">
-    <div class="price-card">
-      <h3>Piso Básico</h3>
-      <p class="price">80€</p>
-      <ul><li>10 fotos editadas</li><li>Entrega en 24h</li><li>Ideal para alquiler</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
-    </div>
-    <div class="price-card">
-      <h3>Vivienda Premium</h3>
-      <p class="price">150€</p>
-      <ul><li>20 fotos editadas</li><li>Edición avanzada</li><li>Ideal para venta</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
-    </div>
-    <div class="price-card">
-      <h3>Local Comercial</h3>
-      <p class="price">200€</p>
-      <ul><li>25 fotos editadas</li><li>Fotografía de detalles</li><li>Entrega en 48h</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
-    </div>
-  </div>
-</section>
+<section id="tarifas" class="pricing">
+<h2 class="title">Tarifas</h2>
 
-<h2 class="section-title" id="sobre">Sobre mí</h2>
-<p class="section-subtitle">Fotógrafo especializado en espacios interiores y arquitectura.</p>
-<section class="about">
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200" alt="">
-  <div>
-    <p>Soy un fotógrafo especializado en capturar espacios inmobiliarios con un enfoque minimalista y profesional.</p>
-    <p style="margin-top:16px">Mi objetivo es mostrar cada propiedad con claridad, amplitud y estética, resaltando su potencial real.</p>
-  </div>
-</section>
+<div class="cards">
 
-<h2 class="section-title" id="contacto">Contacto</h2>
-<p class="section-subtitle">Reserva tu sesión o solicita información.</p>
-<section class="contact">
-  <form>
-    <input type="text" placeholder="Tu nombre">
-    <input type="email" placeholder="Correo electrónico">
-    <textarea placeholder="Cuéntame qué tipo de propiedad necesitas fotografiar"></textarea>
-    <button class="send">Enviar mensaje</button>
-  </form>
-</section>
+<div class="card hidden">
+<h3>Piso Básico</h3>
+<p class="price">80€</p>
 
-<footer>© 2026 Fotografía Inmobiliaria · Todos los derechos reservados</footer>
+<ul class="features">
+<li>✔ 10 fotografías editadas</li>
+<li>✔ Corrección de luz y color</li>
+<li>✔ Entrega en 24 horas</li>
+<li>✔ Duración de sesión: 30 min</li>
+<li>✔ Ideal para alquiler</li>
+<li>✔ Uso web e inmobiliarias</li>
+</ul>
 
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="closeBtn">×</span>
-  <img id="lightboxImg">
+<button onclick="reservar('Piso Básico')">Reservar</button>
 </div>
 
+<div class="card hidden">
+<h3>Vivienda Premium</h3>
+<p class="price">150€</p>
+
+<ul class="features">
+<li>✔ 20 fotografías profesionales</li>
+<li>✔ Edición avanzada HDR</li>
+<li>✔ Corrección de perspectiva</li>
+<li>✔ Duración de sesión: 1h</li>
+<li>✔ Ideal para venta</li>
+<li>✔ Incluye detalles y extras</li>
+</ul>
+
+<button onclick="reservar('Premium')">Reservar</button>
+</div>
+
+<div class="card hidden">
+<h3>Local Comercial</h3>
+<p class="price">200€</p>
+
+<ul class="features">
+<li>✔ 25 fotografías de alta calidad</li>
+<li>✔ Fotografía de interiores y exterior</li>
+<li>✔ Tomas de detalle profesional</li>
+<li>✔ Duración: 1h - 1h 30min</li>
+<li>✔ Entrega en 48h</li>
+<li>✔ Uso comercial completo</li>
+</ul>
+
+<button onclick="reservar('Local Comercial')">Reservar</button>
+</div>
+
+</div>
+</section>
+
 <script>
-const imgs = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const closeBtn = document.getElementById('closeBtn');
-imgs.forEach(img=>{img.addEventListener('click',()=>{lightboxImg.src=img.src;lightbox.classList.add('open')})});
-closeBtn.addEventListener('click',()=>lightbox.classList.remove('open'));
-lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open')});
+const elements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+
+function reservar(tipo){
+    let mensaje = encodeURIComponent("Hola, quiero reservar el servicio: " + tipo);
+    window.open("https://wa.me/34600000000?text=" + mensaje);
+}
 </script>
+
 </body>
 </html>
