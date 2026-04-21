@@ -79,6 +79,22 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
+/* SECTION TITLES */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 120px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-soft);
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
 /* GALLERY */
 .gallery {
     max-width: 1200px;
@@ -99,22 +115,6 @@ nav a:hover {
 
 .gallery img:hover {
     transform: scale(1.02);
-}
-
-/* SECTION TITLES */
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 120px;
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--text-soft);
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 50px;
 }
 
 /* ABOUT */
@@ -138,6 +138,102 @@ nav a:hover {
 .about p {
     color: var(--text-soft);
     line-height: 1.7;
+}
+
+/* PRICING */
+.pricing {
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0 20px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.price-card {
+    border: 1px solid var(--border);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: .3s;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+}
+
+.price-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.price-card ul li {
+    margin: 8px 0;
+    color: var(--text-soft);
+}
+
+.price-card button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.price-card button:hover {
+    opacity: .8;
+}
+
+/* CONTACT */
+.contact {
+    max-width: 900px;
+    margin: 120px auto;
+    padding: 0 20px;
+}
+
+.contact form {
+    display: grid;
+    gap: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button.send {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.send:hover {
+    opacity: .8;
 }
 
 /* FOOTER */
@@ -189,7 +285,9 @@ footer {
         <div>
             <a href="#inicio">Inicio</a>
             <a href="#galeria">Galería</a>
+            <a href="#tarifas">Tarifas</a>
             <a href="#sobre">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
         </div>
     </nav>
 </header>
@@ -203,23 +301,75 @@ footer {
 <p class="section-subtitle">Espacios capturados con precisión, claridad y estética moderna.</p>
 
 <section class="gallery" id="galeria">
-    <img src="piso1.webp" alt="">
-    <img src="piso2.webp" alt="">
-    <img src="piso3.webp" alt="">
-    <img src="casa1.webp" alt="">
-    <img src="casa2.webp" alt="">
-    <img src="local1.webp" alt="">
+    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200" alt="">
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="">
+    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200" alt="">
+    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="">
+    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200" alt="">
+    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200" alt="">
 </section>
 
-<h2 class="section-title">Sobre mí</h2>
+<h2 class="section-title" id="tarifas">Tarifas</h2>
+<p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias, particulares y empresas.</p>
+
+<section class="pricing">
+    <div class="pricing-grid">
+        <div class="price-card">
+            <h3>Piso Básico</h3>
+            <p class="price">80€</p>
+            <ul>
+                <li>10 fotos editadas</li>
+                <li>Entrega en 24h</li>
+                <li>Ideal para alquiler</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
+
+        <div class="price-card">
+            <h3>Vivienda Premium</h3>
+            <p class="price">150€</p>
+            <ul>
+                <li>20 fotos editadas</li>
+                <li>Edición avanzada</li>
+                <li>Ideal para venta</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
+
+        <div class="price-card">
+            <h3>Local Comercial</h3>
+            <p class="price">200€</p>
+            <ul>
+                <li>25 fotos editadas</li>
+                <li>Fotografía de detalles</li>
+                <li>Entrega en 48h</li>
+            </ul>
+            <button>Reservar</button>
+        </div>
+    </div>
+</section>
+
+<h2 class="section-title" id="sobre">Sobre mí</h2>
 <p class="section-subtitle">Fotógrafo especializado en espacios interiores y arquitectura.</p>
 
-<section class="about" id="sobre">
-    <img src="perfil.webp" alt="Retrato">
+<section class="about">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200" alt="">
     <div>
         <p>Soy un fotógrafo especializado en capturar espacios inmobiliarios con un enfoque minimalista y profesional.</p>
         <p>Mi objetivo es mostrar cada propiedad con claridad, amplitud y estética, resaltando su potencial real.</p>
     </div>
+</section>
+
+<h2 class="section-title" id="contacto">Contacto</h2>
+<p class="section-subtitle">Reserva tu sesión o solicita información.</p>
+
+<section class="contact">
+    <form>
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Correo electrónico">
+        <textarea placeholder="Cuéntame qué tipo de propiedad necesitas fotografiar"></textarea>
+        <button class="send">Enviar mensaje</button>
+    </form>
 </section>
 
 <footer>
