@@ -60,7 +60,7 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 .lightbox img{max-width:90%;max-height:85%;border-radius:8px}
 .lightbox-close{position:absolute;top:30px;right:40px;font-size:2rem;cursor:pointer;color:white}
 
-/* ===== NUEVA SECCIÓN: EMPRESAS ===== */
+/* ===== NUEVA SECCIÓN: MARCAS ===== */
 .clients{
   max-width:1200px;
   margin:80px auto;
@@ -126,79 +126,96 @@ footer{text-align:center;padding:60px 20px;color:var(--text-soft);border-top:1px
 </section>
 
 <h2 class="section-title" id="galeria">Galería</h2>
-<p class="section-subtitle">Espacios capturados con precisión, claridad y estética moderna.</p>
 
 <section class="gallery">
-  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200">
-  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200">
-  <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200">
-  <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200">
+  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200" alt="">
+  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="">
+  <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1200" alt="">
+  <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="">
 </section>
 
 <h2 class="section-title" id="tarifas">Tarifas</h2>
-<p class="section-subtitle">Servicios fotográficos profesionales para inmobiliarias.</p>
 
 <section class="pricing">
   <div class="pricing-grid">
     <div class="price-card">
       <h3>Piso Básico</h3>
       <p class="price">80€</p>
-      <ul><li>10 fotos editadas</li><li>Entrega 24h</li></ul>
-      <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar</button>
     </div>
   </div>
 </section>
 
 <h2 class="section-title" id="sobre">Sobre mí</h2>
-<p class="section-subtitle">Fotógrafo especializado en espacios interiores y arquitectura.</p>
 
 <section class="about">
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200">
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200" alt="">
   <div>
-    <p>Soy un fotógrafo especializado en capturar espacios inmobiliarios con un enfoque minimalista y profesional.</p>
-    <p style="margin-top:16px">Mi objetivo es mostrar cada propiedad con claridad y estética.</p>
+    <p>Fotógrafo inmobiliario profesional.</p>
   </div>
 </section>
 
-<!-- ===== NUEVA SECCIÓN (EMPRESAS) ===== -->
-<h2 class="section-title" id="empresas">Empresas con las que he trabajado</h2>
-<p class="section-subtitle">Marcas y clientes que han confiado en mi trabajo.</p>
+<!-- 🔥 NUEVA SECCIÓN AÑADIDA (MARCAS) -->
+<h2 class="section-title" id="empresas">Marcas con las que he trabajado</h2>
+<p class="section-subtitle">Empresas y clientes que han confiado en mi trabajo.</p>
 
 <section class="clients">
   <div class="clients-grid">
 
     <div class="client">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Real_Estate_icon.png" alt="Empresa 1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Real_Estate_icon.png" alt="Marca 1">
     </div>
 
     <div class="client">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Camera_icon.svg" alt="Empresa 2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Camera_icon.svg" alt="Marca 2">
     </div>
 
     <div class="client">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Freelancer_icon.svg" alt="Empresa 3">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Freelancer_icon.svg" alt="Marca 3">
     </div>
 
     <div class="client">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Empresa 4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Marca 4">
     </div>
 
   </div>
 </section>
 
 <h2 class="section-title" id="contacto">Contacto</h2>
-<p class="section-subtitle">Reserva tu sesión o solicita información.</p>
 
 <section class="contact">
   <form>
     <input type="text" placeholder="Tu nombre">
     <input type="email" placeholder="Correo electrónico">
-    <textarea placeholder="Cuéntame qué tipo de propiedad necesitas fotografiar"></textarea>
+    <textarea placeholder="Mensaje"></textarea>
     <button class="send">Enviar mensaje</button>
   </form>
 </section>
 
 <footer>© 2026 Fotografía Inmobiliaria · Todos los derechos reservados</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="closeBtn">×</span>
+  <img id="lightboxImg">
+</div>
+
+<script>
+const imgs = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const closeBtn = document.getElementById('closeBtn');
+
+imgs.forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src=img.src;
+    lightbox.classList.add('open')
+  })
+});
+
+closeBtn.addEventListener('click',()=>lightbox.classList.remove('open'));
+lightbox.addEventListener('click',e=>{
+  if(e.target===lightbox) lightbox.classList.remove('open')
+});
+</script>
 
 </body>
 </html>
