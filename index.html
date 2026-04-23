@@ -3,140 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJMC Studio | Premium</title>
+<title>Portfolio Premium - Fotografía de Producto</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
+body { margin:0; font-family:'Poppins',sans-serif; background:#0b0b0b; color:#fff; scroll-behavior:smooth; }
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#111; position:sticky; top:0; z-index:1000; }
+.logo { font-weight:600; font-size:22px; letter-spacing:2px; }
+nav a { margin:0 15px; color:#aaa; text-decoration:none; }
+nav a:hover { color:#fff; }
+section { padding:80px 50px; }
+.hero { text-align:center; }
+.hero h2 { font-size:45px; }
+.hero p { color:#bbb; }
+.btn { padding:12px 30px; background:#fff; color:#000; border:none; cursor:pointer; }
 
-/* HEADER */
-header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000}
-.logo{font-weight:600;letter-spacing:3px}
-nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px}
-nav a:hover{color:#fff}
+/* GRID */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.card { background:#1a1a1a; border-radius:12px; overflow:hidden; cursor:pointer; }
+.card img { width:100%; transition:0.4s; }
+.card:hover img { transform:scale(1.08); }
 
-/* HERO */
-.hero{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover}
-.hero h1{font-size:clamp(35px,6vw,70px)}
-.hero p{opacity:0.8}
-
-section{padding:80px 20px;max-width:1200px;margin:auto}
-
-/* INSTAGRAM GRID */
-.grid{column-count:3;column-gap:15px}
-.card{break-inside:avoid;margin-bottom:15px;border-radius:12px;overflow:hidden;cursor:pointer;position:relative}
-.card img{width:100%;display:block;transition:0.4s}
-.card:hover img{transform:scale(1.08)}
-.card::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.2);opacity:0;transition:0.3s}
-.card:hover::after{opacity:1}
-
-/* RESPONSIVE */
-@media(max-width:900px){.grid{column-count:2}}
-@media(max-width:600px){.grid{column-count:1}}
+/* FILTER */
+.filters { text-align:center; margin-bottom:30px; }
+.filters button { margin:5px; padding:10px 20px; border:none; cursor:pointer; background:#222; color:#fff; }
+.filters button.active { background:#fff; color:#000; }
 
 /* LIGHTBOX */
-.lightbox{position:fixed;inset:0;display:none;background:rgba(0,0,0,0.95);justify-content:center;align-items:center}
-.lightbox img{max-width:90%;max-height:90%}
+.lightbox { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; }
+.lightbox img { max-width:90%; max-height:90%; }
 
-/* CURSOR */
-.cursor{position:fixed;width:20px;height:20px;border:2px solid #fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:0.05s}
+/* ANIMATIONS */
+.fade { opacity:0; transform:translateY(30px); transition:1s; }
+.fade.show { opacity:1; transform:translateY(0); }
 
-/* FILTERS */
-.filters{text-align:center;margin-bottom:30px}
-.filters button{margin:5px;padding:8px 20px;background:#222;border:none;color:#fff;cursor:pointer}
-.filters button.active{background:#fff;color:#000}
+/* PRICING */
+.pricing { display:flex; gap:20px; flex-wrap:wrap; }
+.price-card { background:#1a1a1a; padding:30px; border-radius:10px; flex:1; text-align:center; }
 
+/* CONTACT */
+.contact input,.contact textarea { width:100%; padding:10px; margin-bottom:10px; background:#1a1a1a; border:none; color:#fff; }
+
+/* WHATSAPP */
+.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; padding:15px; border-radius:50%; text-decoration:none; color:white; font-size:20px; }
+
+footer { text-align:center; padding:20px; background:#111; color:#777; }
 </style>
 </head>
 
 <body>
 
-<div class="cursor" id="cursor"></div>
-
 <header>
-<div class="logo">AJMC</div>
-<nav>
-<a href="#gallery">Galería</a>
-</nav>
+    <div class="logo">AJMC STUDIO</div>
+    <nav>
+        <a href="#about">Sobre mí</a>
+        <a href="#gallery">Galería</a>
+        <a href="#pricing">Tarifas</a>
+        <a href="#contact">Contacto</a>
+    </nav>
 </header>
 
-<section class="hero">
-<h1>Fotografía Premium</h1>
-<p>Experiencia visual de alto nivel</p>
+<section class="hero fade">
+    <h2>Fotografía de Producto Premium</h2>
+    <p>Imágenes que venden comida y bebidas</p>
+    <button class="btn">Ver galería</button>
 </section>
 
-<section id="gallery">
-<h2>Galería</h2>
+<section id="about" class="fade">
+    <h2>Sobre mí</h2>
+    <p>Fotógrafo especializado en fotografía gastronómica profesional. Trabajo con marcas, restaurantes y negocios para crear contenido visual que aumenta sus ventas.</p>
+</section>
 
-<div class="filters">
-<button onclick="filterSelection('all')">Todo</button>
-<button onclick="filterSelection('comida')">Comida</button>
-<button onclick="filterSelection('bebida')">Bebida</button>
+<section id="gallery" class="fade">
+    <h2>Galería</h2>
+
+    <div class="filters">
+        <button class="active" onclick="filterSelection('all')">Todo</button>
+        <button onclick="filterSelection('comida')">Comida</button>
+        <button onclick="filterSelection('bebida')">Bebida</button>
+    </div>
+
+    <div class="grid">
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349"></div>
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></div>
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"></div>
+    </div>
+</section>
+
+<section id="pricing" class="fade">
+    <h2>Tarifas</h2>
+    <div class="pricing">
+        <div class="price-card"><h3>Básico</h3><p>5 fotos</p><p>100€</p></div>
+        <div class="price-card"><h3>Pro</h3><p>15 fotos</p><p>250€</p></div>
+        <div class="price-card"><h3>Premium</h3><p>30 fotos</p><p>450€</p></div>
+    </div>
+</section>
+
+<section id="contact" class="contact fade">
+    <h2>Contacto</h2>
+    <input type="text" placeholder="Nombre">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Mensaje"></textarea>
+    <button class="btn">Enviar</button>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <img id="lightbox-img">
 </div>
 
-<div class="grid" id="galleryGrid"></div>
-</section>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/34600000000" target="_blank">💬</a>
 
-<div class="lightbox" id="lightbox"><img id="lightbox-img"></div>
+<footer>
+    <p>© 2026 AJMC STUDIO</p>
+</footer>
 
 <script>
 
-// CURSOR
-const cursor=document.getElementById('cursor');
-document.addEventListener('mousemove',e=>{
-cursor.style.top=e.clientY+'px';
-cursor.style.left=e.clientX+'px';
-});
-
 // LIGHTBOX
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=document.getElementById('lightbox-img');
+const cards = document.querySelectorAll('.card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
 
-// DATA (tipo app real con categorías)
-const images=[
-{src:'https://images.unsplash.com/photo-1550547660-d9450f859349',cat:'comida'},
-{src:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38',cat:'comida'},
-{src:'https://images.unsplash.com/photo-1509042239860-f550ce710b93',cat:'bebida'},
-{src:'https://images.unsplash.com/photo-1510626176961-4b57d4fbad03',cat:'bebida'},
-{src:'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d',cat:'comida'},
-{src:'https://images.unsplash.com/photo-1544145945-f90425340c7e',cat:'bebida'}
-];
-
-const gallery=document.getElementById('galleryGrid');
-
-function loadImages(filter='all'){
-gallery.innerHTML='';
-images.forEach(imgData=>{
-if(filter==='all'||imgData.cat===filter){
-let div=document.createElement('div');
-div.className='card '+imgData.cat;
-let img=document.createElement('img');
-img.src=imgData.src;
-img.loading='lazy';
-
-div.appendChild(img);
-gallery.appendChild(div);
-
-img.onclick=()=>{
-lightbox.style.display='flex';
-lightboxImg.src=imgData.src;
-};
-}
+cards.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
 });
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// FILTER
+function filterSelection(category) {
+    let items = document.querySelectorAll('.card');
+    items.forEach(el => {
+        if(category === 'all' || el.classList.contains(category)){
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
 }
 
-loadImages();
-
-function filterSelection(cat){
-loadImages(cat);
-}
-
-lightbox.onclick=()=>lightbox.style.display='none';
-
-// SCROLL PARALLAX SUAVE (tipo Apple)
-window.addEventListener('scroll',()=>{
-document.querySelector('.hero').style.transform=`translateY(${window.scrollY*0.3}px)`;
+// ANIMATION SCROLL
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
 });
 
 </script>
