@@ -3,33 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Fotografía - Productos</title>
+<title>Portfolio Premium - Fotografía de Producto</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #0d0d0d; color: #fff; }
-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #111; }
-header h1 { color: #fff; }
-nav a { margin: 0 15px; color: #aaa; text-decoration: none; transition: 0.3s; }
-nav a:hover { color: #fff; }
-section { padding: 60px 50px; }
-.hero { text-align: center; }
-.hero h2 { font-size: 40px; }
-.hero p { color: #bbb; }
-.btn { padding: 10px 25px; background: #fff; color: #000; border: none; cursor: pointer; margin-top: 20px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.card { background: #1a1a1a; padding: 15px; border-radius: 10px; overflow: hidden; }
-.card img { width: 100%; border-radius: 10px; transition: 0.3s; }
-.card img:hover { transform: scale(1.05); }
-.pricing { display: flex; gap: 20px; flex-wrap: wrap; }
-.price-card { background: #1a1a1a; padding: 30px; border-radius: 10px; flex: 1; }
-.contact input, .contact textarea { width: 100%; padding: 10px; margin-bottom: 10px; background: #1a1a1a; border: none; color: white; }
-footer { text-align: center; padding: 20px; background: #111; color: #777; }
+body { margin:0; font-family:'Poppins',sans-serif; background:#0b0b0b; color:#fff; scroll-behavior:smooth; }
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#111; position:sticky; top:0; z-index:1000; }
+.logo { font-weight:600; font-size:22px; letter-spacing:2px; }
+nav a { margin:0 15px; color:#aaa; text-decoration:none; }
+nav a:hover { color:#fff; }
+section { padding:80px 50px; }
+.hero { text-align:center; }
+.hero h2 { font-size:45px; }
+.hero p { color:#bbb; }
+.btn { padding:12px 30px; background:#fff; color:#000; border:none; cursor:pointer; }
+
+/* GRID */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.card { background:#1a1a1a; border-radius:12px; overflow:hidden; cursor:pointer; }
+.card img { width:100%; transition:0.4s; }
+.card:hover img { transform:scale(1.08); }
+
+/* FILTER */
+.filters { text-align:center; margin-bottom:30px; }
+.filters button { margin:5px; padding:10px 20px; border:none; cursor:pointer; background:#222; color:#fff; }
+.filters button.active { background:#fff; color:#000; }
+
+/* LIGHTBOX */
+.lightbox { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; }
+.lightbox img { max-width:90%; max-height:90%; }
+
+/* ANIMATIONS */
+.fade { opacity:0; transform:translateY(30px); transition:1s; }
+.fade.show { opacity:1; transform:translateY(0); }
+
+/* PRICING */
+.pricing { display:flex; gap:20px; flex-wrap:wrap; }
+.price-card { background:#1a1a1a; padding:30px; border-radius:10px; flex:1; text-align:center; }
+
+/* CONTACT */
+.contact input,.contact textarea { width:100%; padding:10px; margin-bottom:10px; background:#1a1a1a; border:none; color:#fff; }
+
+/* WHATSAPP */
+.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; padding:15px; border-radius:50%; text-decoration:none; color:white; font-size:20px; }
+
+footer { text-align:center; padding:20px; background:#111; color:#777; }
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Mi Portfolio</h1>
+    <div class="logo">AJMC STUDIO</div>
     <nav>
         <a href="#about">Sobre mí</a>
         <a href="#gallery">Galería</a>
@@ -38,59 +63,46 @@ footer { text-align: center; padding: 20px; background: #111; color: #777; }
     </nav>
 </header>
 
-<section class="hero">
-    <h2>Fotografía Profesional de Productos</h2>
-    <p>Especialista en fotografía de comida y bebidas en interiores</p>
-    <button class="btn">Ver trabajos</button>
+<section class="hero fade">
+    <h2>Fotografía de Producto Premium</h2>
+    <p>Imágenes que venden comida y bebidas</p>
+    <button class="btn">Ver galería</button>
 </section>
 
-<section id="about">
+<section id="about" class="fade">
     <h2>Sobre mí</h2>
-    <p>Soy fotógrafo especializado en productos gastronómicos, creando imágenes atractivas que aumentan las ventas.</p>
+    <p>Fotógrafo especializado en fotografía gastronómica profesional. Trabajo con marcas, restaurantes y negocios para crear contenido visual que aumenta sus ventas.</p>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="fade">
     <h2>Galería</h2>
 
-    <h3>Producto Comida</h3>
-    <div class="grid">
-        <div class="card"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d"></div>
+    <div class="filters">
+        <button class="active" onclick="filterSelection('all')">Todo</button>
+        <button onclick="filterSelection('comida')">Comida</button>
+        <button onclick="filterSelection('bebida')">Bebida</button>
     </div>
 
-    <h3>Producto Bebida</h3>
     <div class="grid">
-        <div class="card"><img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d"></div>
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349"></div>
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></div>
+        <div class="card comida"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"></div>
+        <div class="card bebida"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"></div>
     </div>
 </section>
 
-<section id="pricing">
+<section id="pricing" class="fade">
     <h2>Tarifas</h2>
     <div class="pricing">
-        <div class="price-card">
-            <h3>Básico</h3>
-            <p>5 fotos</p>
-            <p>100€</p>
-        </div>
-        <div class="price-card">
-            <h3>Profesional</h3>
-            <p>15 fotos</p>
-            <p>250€</p>
-        </div>
-        <div class="price-card">
-            <h3>Premium</h3>
-            <p>30 fotos</p>
-            <p>450€</p>
-        </div>
+        <div class="price-card"><h3>Básico</h3><p>5 fotos</p><p>100€</p></div>
+        <div class="price-card"><h3>Pro</h3><p>15 fotos</p><p>250€</p></div>
+        <div class="price-card"><h3>Premium</h3><p>30 fotos</p><p>450€</p></div>
     </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" class="contact fade">
     <h2>Contacto</h2>
     <input type="text" placeholder="Nombre">
     <input type="email" placeholder="Email">
@@ -98,9 +110,60 @@ footer { text-align: center; padding: 20px; background: #111; color: #777; }
     <button class="btn">Enviar</button>
 </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <img id="lightbox-img">
+</div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/34600000000" target="_blank">💬</a>
+
 <footer>
-    <p>© 2026 Mi Portfolio - Todos los derechos reservados</p>
+    <p>© 2026 AJMC STUDIO</p>
 </footer>
+
+<script>
+
+// LIGHTBOX
+const cards = document.querySelectorAll('.card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+cards.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// FILTER
+function filterSelection(category) {
+    let items = document.querySelectorAll('.card');
+    items.forEach(el => {
+        if(category === 'all' || el.classList.contains(category)){
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
+}
+
+// ANIMATION SCROLL
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+
+</script>
 
 </body>
 </html>
