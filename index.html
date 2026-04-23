@@ -3,73 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJMC Studio | Fotografía de Producto</title>
+<title>AJMC Studio | Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family:'Poppins',sans-serif; background:#0a0a0a; color:#fff; scroll-behavior:smooth; }
-header { display:flex; justify-content:space-between; align-items:center; padding:20px 60px; position:fixed; width:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(10px); z-index:1000; }
-.logo { font-size:22px; font-weight:600; letter-spacing:3px; }
-nav a { margin:0 15px; color:#aaa; text-decoration:none; }
-nav a:hover { color:#fff; }
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
 
-.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat; }
-.hero h1 { font-size:60px; }
-.hero p { color:#ddd; }
-.btn { margin-top:20px; padding:12px 30px; background:#fff; color:#000; border:none; cursor:pointer; }
+/* HEADER */
+header{position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000}
+.logo{font-weight:600;letter-spacing:3px}
+nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px}
+nav a:hover{color:#fff}
 
-section { padding:100px 60px; }
+/* HERO */
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover}
+.hero h1{font-size:clamp(35px,6vw,70px)}
+.hero p{opacity:0.8}
 
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.card { position:relative; overflow:hidden; border-radius:12px; cursor:pointer; }
-.card img { width:100%; height:100%; object-fit:cover; transition:0.5s; }
-.card:hover img { transform:scale(1.1); }
-.card::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.3); opacity:0; transition:0.3s; }
-.card:hover::after { opacity:1; }
+section{padding:80px 20px;max-width:1200px;margin:auto}
 
-.filters { text-align:center; margin-bottom:40px; }
-.filters button { margin:5px; padding:10px 25px; border:none; background:#222; color:#fff; cursor:pointer; }
-.filters button.active { background:#fff; color:#000; }
+/* INSTAGRAM GRID */
+.grid{column-count:3;column-gap:15px}
+.card{break-inside:avoid;margin-bottom:15px;border-radius:12px;overflow:hidden;cursor:pointer;position:relative}
+.card img{width:100%;display:block;transition:0.4s}
+.card:hover img{transform:scale(1.08)}
+.card::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.2);opacity:0;transition:0.3s}
+.card:hover::after{opacity:1}
 
-.lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; }
-.lightbox img { max-width:90%; max-height:90%; }
+/* RESPONSIVE */
+@media(max-width:900px){.grid{column-count:2}}
+@media(max-width:600px){.grid{column-count:1}}
 
-.fade { opacity:0; transform:translateY(40px); transition:1s; }
-.fade.show { opacity:1; transform:translateY(0); }
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;display:none;background:rgba(0,0,0,0.95);justify-content:center;align-items:center}
+.lightbox img{max-width:90%;max-height:90%}
 
-.pricing { display:flex; gap:30px; flex-wrap:wrap; }
-.price-card { flex:1; background:#111; padding:40px; border-radius:15px; text-align:center; transition:0.3s; }
-.price-card:hover { transform:translateY(-10px); }
+/* CURSOR */
+.cursor{position:fixed;width:20px;height:20px;border:2px solid #fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:0.05s}
 
-.contact input,.contact textarea { width:100%; padding:12px; margin-bottom:10px; background:#111; border:none; color:#fff; }
+/* FILTERS */
+.filters{text-align:center;margin-bottom:30px}
+.filters button{margin:5px;padding:8px 20px;background:#222;border:none;color:#fff;cursor:pointer}
+.filters button.active{background:#fff;color:#000}
 
-.testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
-.testimonial { background:#111; padding:20px; border-radius:10px; }
-
-.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; padding:15px; border-radius:50%; text-decoration:none; font-size:20px; }
-
-footer { text-align:center; padding:20px; background:#111; color:#777; }
 </style>
 </head>
 
 <body>
 
+<div class="cursor" id="cursor"></div>
+
 <header>
-<div class="logo">AJMC STUDIO</div>
+<div class="logo">AJMC</div>
 <nav>
 <a href="#gallery">Galería</a>
-<a href="#pricing">Tarifas</a>
-<a href="#contact">Contacto</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Fotografía que vende</h1>
-<p>Especialista en comida y bebida</p>
-<a href="#gallery"><button class="btn">Ver trabajos</button></a>
+<h1>Fotografía Premium</h1>
+<p>Experiencia visual de alto nivel</p>
 </section>
 
-<section id="gallery" class="fade">
+<section id="gallery">
 <h2>Galería</h2>
 
 <div class="filters">
@@ -78,65 +75,70 @@ footer { text-align:center; padding:20px; background:#111; color:#777; }
 <button onclick="filterSelection('bebida')">Bebida</button>
 </div>
 
-<div class="grid">
-<div class="card comida"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349"></div>
-<div class="card comida"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"></div>
-<div class="card bebida"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"></div>
-<div class="card bebida"><img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"></div>
-</div>
-</section>
-
-<section class="fade">
-<h2>Clientes satisfechos</h2>
-<div class="testimonials">
-<div class="testimonial">"Las fotos aumentaron nuestras ventas un 40%"</div>
-<div class="testimonial">"Calidad increíble y muy profesional"</div>
-</div>
-</section>
-
-<section id="pricing" class="fade">
-<h2>Tarifas</h2>
-<div class="pricing">
-<div class="price-card"><h3>Básico</h3><p>5 fotos</p><p>100€</p></div>
-<div class="price-card"><h3>Pro</h3><p>15 fotos</p><p>250€</p></div>
-<div class="price-card"><h3>Premium</h3><p>30 fotos</p><p>450€</p></div>
-</div>
-</section>
-
-<section id="contact" class="contact fade">
-<h2>Contacto</h2>
-<input type="text" placeholder="Nombre">
-<input type="email" placeholder="Email">
-<textarea placeholder="Mensaje"></textarea>
-<button class="btn">Enviar</button>
+<div class="grid" id="galleryGrid"></div>
 </section>
 
 <div class="lightbox" id="lightbox"><img id="lightbox-img"></div>
-<a class="whatsapp" href="https://wa.me/34600000000" target="_blank">💬</a>
-
-<footer>© 2026 AJMC STUDIO</footer>
 
 <script>
-const imgs=document.querySelectorAll('.card img');
+
+// CURSOR
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+cursor.style.top=e.clientY+'px';
+cursor.style.left=e.clientX+'px';
+});
+
+// LIGHTBOX
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=document.getElementById('lightbox-img');
-imgs.forEach(img=>{img.onclick=()=>{lightbox.style.display='flex';lightboxImg.src=img.src;}});
-lightbox.onclick=()=>lightbox.style.display='none';
 
-function filterSelection(cat){
-let items=document.querySelectorAll('.card');
-items.forEach(el=>{
-if(cat==='all'||el.classList.contains(cat)){el.style.display='block';}
-else{el.style.display='none';}
+// DATA (tipo app real con categorías)
+const images=[
+{src:'https://images.unsplash.com/photo-1550547660-d9450f859349',cat:'comida'},
+{src:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38',cat:'comida'},
+{src:'https://images.unsplash.com/photo-1509042239860-f550ce710b93',cat:'bebida'},
+{src:'https://images.unsplash.com/photo-1510626176961-4b57d4fbad03',cat:'bebida'},
+{src:'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d',cat:'comida'},
+{src:'https://images.unsplash.com/photo-1544145945-f90425340c7e',cat:'bebida'}
+];
+
+const gallery=document.getElementById('galleryGrid');
+
+function loadImages(filter='all'){
+gallery.innerHTML='';
+images.forEach(imgData=>{
+if(filter==='all'||imgData.cat===filter){
+let div=document.createElement('div');
+div.className='card '+imgData.cat;
+let img=document.createElement('img');
+img.src=imgData.src;
+img.loading='lazy';
+
+div.appendChild(img);
+gallery.appendChild(div);
+
+img.onclick=()=>{
+lightbox.style.display='flex';
+lightboxImg.src=imgData.src;
+};
+}
 });
 }
 
-const faders=document.querySelectorAll('.fade');
+loadImages();
+
+function filterSelection(cat){
+loadImages(cat);
+}
+
+lightbox.onclick=()=>lightbox.style.display='none';
+
+// SCROLL PARALLAX SUAVE (tipo Apple)
 window.addEventListener('scroll',()=>{
-faders.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('show');}
+document.querySelector('.hero').style.transform=`translateY(${window.scrollY*0.3}px)`;
 });
-});
+
 </script>
 
 </body>
